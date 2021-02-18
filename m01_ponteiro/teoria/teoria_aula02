@@ -1,0 +1,12 @@
+    & - Obtem o endereço de uma variável;
+        int n;
+        &n --> 61ff18
+
+    * - Declara uma variável como ponteiro;
+        int *n
+    
+    * - Obtém o conteúdo de um variável ponteiro
+        int n, *ptr_n;
+        n = 25;
+        ptr_n = &n;
+        *ptr_n --> 25;
