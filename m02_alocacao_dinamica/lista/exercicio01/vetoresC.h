@@ -9,7 +9,6 @@ float CriarVetorIFloat(int tamanho);
 
 int CriarVetorInt(int tamanho)
 {
-
     int *vetor;
     vetor = (int *)calloc(tamanho, sizeof(int));
 
