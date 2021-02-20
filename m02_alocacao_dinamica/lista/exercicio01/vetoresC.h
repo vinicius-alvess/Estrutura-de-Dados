@@ -1,17 +1,17 @@
 #ifndef vetoresC
 #define vetoresC
 #include <stdio.h>
+
 int CriarVetorInt(int);
-float CriarVetorFloat(int);
+float CriarVetorIFloat(int tamanho);
 
 #endif // vetoresC
 
 int CriarVetorInt(int tamanho)
 {
 
-    int i, *ponteiro, vetor[tamanho];
+    int *vetor;
+    vetor = (int *)calloc(tamanho, sizeof(int));
 
-    ponteiro = &vetor;
-
-    return ponteiro;
+    return vetor;
 }

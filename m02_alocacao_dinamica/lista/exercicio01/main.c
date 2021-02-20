@@ -12,5 +12,6 @@ int main()
         printf("Valor: %d\nEndereco %d\n", *(p + i), p + i);
     }
 
+
     return 0;
 }
