@@ -14,59 +14,62 @@ Obs: a agenda deve ter capacidade para 100 entradas.
 */
 
 #include <stdio.h>
+#define limite 100 // limite de cadastros
 
-int total_de_cadastros = 0;
-long int cep;
-char nome[30], endereco[100], fone[10];
+int n_cadastros = 0;
+long int cep[limite];
+char nome[limite][30], endereco[limite][100], fone[limite][10];
 
 void cadastro();
 
 void cadastro()
 {
     char *pnome, *pendereco, *pfone, *pcep;
+    static int n_cadastro = 0;
 
     //NOME
     printf("Nome: ");
-    scanf("%s", &nome);
+    scanf("%s", &nome[n_cadastro]);
     printf("\n");
 
-    pnome = &nome;
+    pnome = &nome[n_cadastro];
 
     //ENDERECO
     printf("Endereco: ");
-    scanf("%s", &endereco);
+    scanf("%s", &endereco[n_cadastro]);
     printf("\n");
 
-    pendereco = &endereco;
+    pendereco = &endereco[n_cadastro];
 
     //TELEFONE
     printf("Telefone: ");
-    scanf("%s", &fone);
+    scanf("%s", &fone[n_cadastro]);
     printf("\n");
 
-    pfone = &fone;
+    pfone = &fone[n_cadastro];
 
     //CEP
     printf("CEP: ");
-    scanf("%ld", &cep);
+    scanf("%ld", &cep[n_cadastro]);
     printf("\n");
 
-    pcep = &cep;
+    pcep = &cep[n_cadastro];
 
-    total_de_cadastros++;
+    n_cadastro++;
 }
 
 int main()
 {
-    char captura_opcao;
+    char opcao;
+
     printf("a. Entrar um novo nome na agenda.\n");
     printf("b. Imprimir na tela os dados de todas as pessoas cadastradas.\n");
     printf("c. Imprimir a lista de nomes cadastrados que comecem por uma letra informada pelo usuario.\n");
     printf("d. Fim\n");
 
-    scanf("%c", &captura_opcao);
+    scanf("%c", &opcao);
 
-    switch (captura_opcao)
+    switch (opcao)
     {
     case 'a':
         cadastro();
@@ -79,18 +82,15 @@ int main()
         break;
 
     case 'd':
-        printf("Tchau, espero te ver logo! :)");
+        printf("Tchau, espero te ver logo!\n");
         break;
 
     default:
-        printf("Escolha uma opcao valida!");
+        printf("Escolha uma opcao valida!\n");
         break;
     }
-    //printf("%c", captura_opcao);
 
-    //cadastro();
-
-    //printf("\n\n\n\n%s", nome);
+    printf("\n\n\n\n%s", nome[0]);
 
     return 0;
 }
