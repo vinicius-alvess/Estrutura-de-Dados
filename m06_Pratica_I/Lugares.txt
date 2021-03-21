@@ -1,20 +1,20 @@
 10 _LUGAR_
-Amazonas 
-Arari
+AMAZONAS 
+ARARI
 Brasilia
 Campinas
 Carauari
 Carnaubal
-Coari
+COARI
 Forquilha
 Goias 
 Itaubal
 Manacapuru 
 Parana
+UBERABA
 Parintins 
 Penaforte
 Piracema
-Uberaba 
 Uberlandia
 Urucurituba
 

@@ -1,4 +1,5 @@
 9 _PESSOA_
+Jose
 Alice
 Helena
 Isabela
@@ -7,15 +8,17 @@ Laura
 Livia
 Luiza
 Manuela
-Sofia
+SOFIA
 Valentina
 Arthur
 Bernardo
 Davi
+ROBERTO
 Gabriel
 Heitor
 Lucca
 Lorenzo
 Miguel
+MARCOS
 Matheus
 Pedro

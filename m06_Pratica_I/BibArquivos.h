@@ -17,5 +17,7 @@ FILE *Arquivo_Novo(char *PNomeArquivo);
 
 //Exibições de conteúdos de arquivos
 int Arquivo_MostraConteudo(FILE *parq);
+int Arquivo_ProximaPalavra(FILE *parq, char *ppalavra);
+
 
 #endif /* BibArquivos_h */
