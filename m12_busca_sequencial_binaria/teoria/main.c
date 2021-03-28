@@ -1,15 +1,11 @@
-//
 //  main.c
 //  EDABuscaSeqBin
-//
-//  Created by Nilton Correia da Silva on 22/03/21.
-//
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "BibBuscas.c"
 
-int main(int argc, const char *argv[])
+int main()
 {
     int pind, Valor;
     int *Aleatorio = NULL, pTamAleatorio = 0;
@@ -25,6 +21,7 @@ int main(int argc, const char *argv[])
         printf("\nB - Busca Sequencial");
         printf("\nC - Gerar Valores Ordenados");
         printf("\nD - Busca Binária");
+        printf("\nR - Busca Binária Recursiva");
 
         printf("\nS - Sair");
         printf("\nOpção: ");
@@ -34,12 +31,16 @@ int main(int argc, const char *argv[])
         case 'A':
             if (pTamAleatorio > 0)
                 free(Aleatorio);
+
             printf("Tamanho do Vetor: ");
             scanf("%d", &pTamAleatorio);
+
             Aleatorio = (int *)malloc(pTamAleatorio * sizeof(int));
+
             if (Aleatorio != NULL)
             {
                 GeraAleatorioInt(Aleatorio, pTamAleatorio);
+
                 for (pind = 0; pind < pTamAleatorio; pind++)
                     printf("\nValor %d: %d", pind, Aleatorio[pind]);
             }
@@ -52,7 +53,9 @@ int main(int argc, const char *argv[])
             {
                 printf("Valor a Ser Encontrado: ");
                 scanf("%d", &Valor);
+
                 pind = BuscaAleatoriaInt(Aleatorio, pTamAleatorio, Valor);
+
                 if (pind > -1)
                 {
                     printf("\nValor %d encontrado na posição %d.\n", Valor, pind);
@@ -64,14 +67,18 @@ int main(int argc, const char *argv[])
             }
             else
                 printf("\nValores aleatórios não foram gerados!!!\n");
+
             break;
 
         case 'C':
             if (pTamOrdenado > 0)
                 free(Ordenado);
+
             printf("Tamanho do Vetor: ");
             scanf("%d", &pTamOrdenado);
+
             Ordenado = (int *)malloc(pTamOrdenado * sizeof(int));
+
             if (Ordenado != NULL)
             {
                 GeraOrdenadoInt(Ordenado, pTamOrdenado);
@@ -87,7 +94,30 @@ int main(int argc, const char *argv[])
             {
                 printf("Valor a Ser Encontrado: ");
                 scanf("%d", &Valor);
+
                 pind = BuscaBinariaInt(Ordenado, pTamOrdenado, Valor);
+
+                if (pind > -1)
+                {
+                    printf("\nValor %d encontrado na posição %d.\n", Valor, pind);
+                }
+                else
+                {
+                    printf("\nValor %d não encontrado!!!\n", Valor);
+                }
+            }
+            else
+                printf("\nValores ordenados não foram gerados!!!\n");
+            break;
+
+        case 'R':
+            if (pTamOrdenado > 0)
+            {
+                printf("Valor a Ser Encontrado: ");
+                scanf("%d", &Valor);
+
+                pind = BuscaBinaria_Recursiva(Ordenado, 0, pTamOrdenado - 1, Valor);
+
                 if (pind > -1)
                 {
                     printf("\nValor %d encontrado na posição %d.\n", Valor, pind);
