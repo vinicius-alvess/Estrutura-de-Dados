@@ -51,9 +51,9 @@ int BuscaAleatoriaInt(int *pvetor, int pTAM, int pvalor)
 int BuscaBinariaInt(int *pvetor, int pTAM, int pvalor)
 {
     int esquerda = 0;
-    int direita = pTAM - 1;
     int encontrado = 0;
     int meio;
+    int direita = pTAM - 1;
 
     while (esquerda <= direita && encontrado == 0)
     {
@@ -85,24 +85,23 @@ int BuscaBinaria_Recursiva(int *pvetor, int esquerda, int direita, int pvalor)
 {
     int meio = (esquerda + direita) / 2;
 
-    if (esquerda == direita)
-    {
-        return -1;
-    }
-
     if (pvetor[meio] == pvalor)
     {
         return meio;
     }
+
+    else if (esquerda == direita)
+    {
+        return -1;
+    }
+
     else if (pvalor < pvetor[meio])
     {
-        direita = meio - 1;
-        return BuscaBinaria_Recursiva(pvetor, esquerda, direita, pvalor);
+        return BuscaBinaria_Recursiva(pvetor, esquerda, direita - 1, pvalor);
     }
 
     else
     {
-        esquerda = meio + 1;
-        return BuscaBinaria_Recursiva(pvetor, esquerda, direita, pvalor);
+        return BuscaBinaria_Recursiva(pvetor, esquerda + 1, direita, pvalor);
     }
 }
