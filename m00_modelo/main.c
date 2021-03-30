@@ -19,9 +19,6 @@ int main()
         printf("\n");
         printf("\nA - Gerar Valores Aleatórios");
         printf("\nB - Gerar Valores Ordenados");
-        printf("\nC - Ordenação InsertSort Crescente");
-        printf("\nD - Ordenação InsertSort Decrescente");
-        printf("\nE - Ordenação BubbleSort");
 
         printf("\nS - Sair");
         printf("\nOpção: ");
@@ -66,45 +63,6 @@ int main()
             }
             else
                 printf("\nErro 1: Não foi possível alocar o vetor!!!\n");
-            break;
-
-        case 'C':
-            if (pTamAleatorio > 0)
-            {
-                InsertSort_Crescente(Aleatorio, pTamAleatorio);
-
-                for (pind = 0; pind < pTamAleatorio; pind++)
-                    printf("\nValor %d: %d", pind, Aleatorio[pind]);
-            }
-            else
-                printf("\nValores aleatórios não foram gerados!!!\n");
-
-            break;
-
-        case 'D':
-            if (pTamAleatorio > 0)
-            {
-                InsertSort_Decrescente(Aleatorio, pTamAleatorio);
-
-                for (pind = 0; pind < pTamAleatorio; pind++)
-                    printf("\nValor %d: %d", pind, Aleatorio[pind]);
-            }
-            else
-                printf("\nValores aleatórios não foram gerados!!!\n");
-
-            break;
-
-        case 'E':
-            if (pTamAleatorio > 0)
-            {
-                Ordenacao_BubbleSort(Aleatorio, pTamAleatorio);
-
-                for (pind = 0; pind < pTamAleatorio; pind++)
-                    printf("\nValor %d: %d", pind, Aleatorio[pind]);
-            }
-            else
-                printf("\nValores aleatórios não foram gerados!!!\n");
-
             break;
 
         case 'S':

@@ -10,9 +10,7 @@
 void GeraAleatorioInt(int *pvetor, int pTAM);
 void GeraOrdenadoInt(int *pvetor, int pTAM);
 
-//Ordenação
-void InsertSort_Crescente(int *v, int n);
-void InsertSort_Decrescente(int *v, int n);
-void Ordenacao_BubbleSort(int *v, int n);
+//Funções
+
 
 #endif /* BibBuscas_h */
